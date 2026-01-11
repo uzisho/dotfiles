@@ -42,6 +42,24 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
 
+;; Custom TODO keywords with colors
+(after! org
+  (setq org-todo-keywords
+        '((sequence
+           "TODO(t)"      ; Task to do
+           "DECISION(e)"  ; Decision needed
+           "URGENT(u)"    ; Urgent task
+           "WAITING(w)"   ; Waiting on someone/something
+           "|"
+           "DONE(d)")))   ; Completed
+
+  ;; Custom colors for TODO states
+  (setq org-todo-keyword-faces
+        '(("TODO" . (:foreground "green" :weight bold))
+          ("DECISION" . (:foreground "yellow" :weight bold))
+          ("URGENT" . (:foreground "red" :weight bold))
+          ("WAITING" . (:foreground "blue" :weight bold))
+          ("DONE" . (:foreground "grey" :weight bold)))))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
