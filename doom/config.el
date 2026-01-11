@@ -55,10 +55,10 @@
 
   ;; Custom colors for TODO states
   (setq org-todo-keyword-faces
-        '(("TODO" . (:foreground "green" :weight bold))
-          ("DECISION" . (:foreground "yellow" :weight bold))
-          ("URGENT" . (:foreground "red" :weight bold))
-          ("WAITING" . (:foreground "blue" :weight bold))
+        '(("TODO" . (:foreground "#76C372" :weight bold))
+          ("DECISION" . (:foreground "#D9B977" :weight bold))
+          ("URGENT" . (:foreground "#AD413E" :weight bold))
+          ("WAITING" . (:foreground "#77D9AC" :weight bold))
           ("DONE" . (:foreground "grey" :weight bold)))))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
