@@ -59,7 +59,13 @@
           ("DECISION" . (:foreground "#D9B977" :weight bold))
           ("URGENT" . (:foreground "#AD413E" :weight bold))
           ("WAITING" . (:foreground "#77D9AC" :weight bold))
-          ("DONE" . (:foreground "grey" :weight bold)))))
+          ("DONE" . (:foreground "#5B6268" :weight bold)))))
+
+;; Force override theme colors for org-todo faces
+(add-hook! 'doom-load-theme-hook
+  (custom-set-faces!
+    '(org-todo :foreground "#76C372" :weight bold)
+    '(org-done :foreground "#5B6268" :weight bold)))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
