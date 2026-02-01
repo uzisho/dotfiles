@@ -59,7 +59,14 @@
           ("DECISION" . (:foreground "#D9B977" :weight bold))
           ("URGENT" . (:foreground "#AD413E" :weight bold))
           ("WAITING" . (:foreground "#77D9AC" :weight bold))
-          ("DONE" . (:foreground "#5B6268" :weight bold)))))
+          ("DONE" . (:foreground "#5B6268" :weight bold))))
+
+  ;; Refile targets
+  (setq org-refile-targets
+        '(("~/Dropbox/_org/tasker.org" :maxlevel . 3)
+          ("~/Dropbox/_org/reservoir.org" :maxlevel . 3)))
+  (setq org-refile-use-outline-path 'file)
+  (setq org-refile-allow-creating-parent-nodes 'confirm))
 
 ;; Force override theme colors for org-todo faces
 (add-hook! 'doom-load-theme-hook
@@ -98,3 +105,10 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; Spell checking for org files
+(add-hook 'org-mode-hook #'flyspell-mode)
+
+;; Make misspelled words red
+(custom-set-faces!
+  '(flyspell-incorrect :foreground "#FF0000" :underline (:style wave :color "#FF0000")))
